@@ -6,7 +6,6 @@ import GistList from './GistList';
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <div>hello, tsx with parcel</div>
     <GistList />
   </ApolloProvider>,
   document.getElementById('app')
