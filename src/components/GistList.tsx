@@ -5,7 +5,7 @@ const {
 
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-import { prismHighlightAll } from './utils/highlight';
+import { prismHighlightAll } from '../utils/highlight';
 
 const QUERY = gql`
   { 
