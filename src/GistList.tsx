@@ -5,12 +5,7 @@ const {
 
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-
-import * as Prism from 'prismjs';
-import 'prismjs/components/prism-haskell.min';
-import 'prismjs/components/prism-javascript.min';
-import 'prismjs/components/prism-typescript.min';
-import 'prismjs/themes/prism-tomorrow.css'
+import { prismHighlightAll } from './utils/highlight';
 
 const QUERY = gql`
   { 
@@ -39,7 +34,7 @@ export default () => {
   } = useQuery(QUERY);
 
   useEffect(() => {
-    Prism.highlightAll();
+    prismHighlightAll();
   }, [loading, error, data])
 
   if (loading) return <p>Loading...</p>;
