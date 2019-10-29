@@ -1,8 +1,4 @@
-import * as React from 'react';
-const {
-  useEffect,
-} = React;
-
+import React, { useEffect } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import { prismHighlightAll } from '../utils/highlight';
