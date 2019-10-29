@@ -10,15 +10,31 @@
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
+  "postcss": {
+    "modules": true,
+    "plugins": []
+  },
+  "babel": {
+    "presets": [
+      "@babel/typescript"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-typescript",
+      "astroturf/plugin"
+    ]
+  },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
     "@types/prismjs": "^1.16.0",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
     "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.4.1",
     "typescript": "^3.6.4"
   },
   "dependencies": {
     "apollo-boost": "^0.4.4",
+    "astroturf": "^0.9.21",
     "dotenv": "^8.1.0",
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",

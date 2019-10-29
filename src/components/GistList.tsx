@@ -7,6 +7,12 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import { prismHighlightAll } from '../utils/highlight';
 
+import styled from 'astroturf';
+
+const Param = styled('p')`
+  color: blue;
+`;
+
 const QUERY = gql`
   { 
     user(login: "dadadadev") {
@@ -42,6 +48,7 @@ export default () => {
   
   return (
     <>
+      <Param>test</Param>
       <h4>Gists</h4>
       {data.user.gists.nodes.map(gist => (
         gist.files.map(({
