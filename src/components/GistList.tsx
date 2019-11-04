@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
+import dayjs from 'dayjs';
 import { prismHighlightAll } from '../utils/highlight';
 
 const QUERY = gql`
@@ -8,6 +9,7 @@ const QUERY = gql`
     user(login: "dadadadev") {
       gists(first: 10) {
         nodes {
+          updatedAt,
           files {
             encodedName
             encoding
@@ -50,6 +52,7 @@ export default () => {
             <pre className={`language-${extension.slice(1)}`}> {/* remove '.' from extension */}
               <code>{text}</code>
             </pre>
+            <time dateTime={dayjs(gist.updatedAt).format()}>{`Last updated: ${dayjs(gist.updatedAt).format('YYYY-M-D(Z)')}`}</time>
           </React.Fragment>
         )
       )))}
