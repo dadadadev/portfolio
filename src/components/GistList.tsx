@@ -37,11 +37,14 @@ export default () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>something wrong</p>;
+
+  const gistNodes = data.user.gists.nodes;
+  gistNodes.sort((a, b) => a.updatedAt < b.updatedAt ? 1 : -1);
   
   return (
     <>
       <h4>Gists</h4>
-      {data.user.gists.nodes.map(gist => (
+      {gistNodes.map(gist => (
         gist.files.map(({
           name,
           extension,
