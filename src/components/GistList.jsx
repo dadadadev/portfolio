@@ -3,6 +3,9 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import dayjs from 'dayjs';
 import { prismHighlightAll } from '../utils/highlight';
+import styled from 'astroturf';
+
+const Test = styled('div')``;
 
 const QUERY = gql`
   { 
