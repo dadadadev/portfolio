@@ -1,0 +1,9 @@
+node_modules
+dist/
+
+# env
+.env
+
+# parcel
+.cache
+yarn-error.log
